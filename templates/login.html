@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>l00re</title>
+</head>
+<body>
+
+  <!-- login card -->
+  <div class="card">
+    <h1>Sign in</h1>
+    <p class="subtitle">demo login</p>
+
+    <form method="POST" action="/login" autocomplete="off">
+
+      <div class="field">
+        <label for="username">Username</label>
+
+        <!-- type="text" is fine for username -->
+        <input type="text" id="username" name="username"
+               placeholder="Enter username" required />
+      </div>
+
+      <div class="field">
+        <label for="password">
+          Password
+        </label>
+        <input type="text" id="password" name="password"
+               placeholder="Enter password" required />
+      </div>
+
+      <button type="submit">Log in</button>
+
+      {% if message %}
+        <div class="message {{ message.type }}">
+          {{ message.text }}
+        </div>
+      {% endif %}
+
+    </form>
+  </div>
+</body>
+</html>
